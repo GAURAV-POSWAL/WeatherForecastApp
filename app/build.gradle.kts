@@ -1,8 +1,6 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
-    kotlin("kapt")
-    id("com.google.dagger.hilt.android")
 }
 
 android {
@@ -47,26 +45,7 @@ dependencies {
     implementation(project(":core"))
     implementation(project(":domain"))
 
-    /*Dagger Hilt dependencies*/
-    implementation("com.google.dagger:hilt-android:2.48.1")
-    kapt("com.google.dagger:hilt-android-compiler:2.48.1")
-
-    /*Retrofit dependencies*/
-    implementation ("com.squareup.retrofit2:retrofit:2.9.0")
-    implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
-    implementation ("com.squareup.okhttp3:logging-interceptor:4.12.0")
-
-    /*Google Gson dependency*/
-    implementation ("com.google.code.gson:gson:2.10.1")
-
-
-
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
-}
-
-// Allow references to generated code
-kapt {
-    correctErrorTypes = true
 }
