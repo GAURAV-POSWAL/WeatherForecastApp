@@ -12,14 +12,17 @@ import retrofit2.Retrofit
 
 @InstallIn(ViewModelComponent::class)
 @Module
-abstract class WeatherDetailsDataModule {
+interface WeatherDetailsDataModule {
     @Binds
     abstract fun provideWeatherDetailsRepository(weatherDataRepo: WeatherDetailsRepositoryImpl): WeatherDetailsRepository
 
+
+}
+@InstallIn(ViewModelComponent::class)
+@Module
+object WeatherModule{
     @Provides
     fun provideWeatherDetailsApiService(retrofit: Retrofit): WeatherDetailsApiService{
         return retrofit.create(WeatherDetailsApiService::class.java)
     }
-
-
 }

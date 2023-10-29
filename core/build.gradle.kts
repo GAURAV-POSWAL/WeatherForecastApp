@@ -41,7 +41,7 @@ dependencies {
     implementation("com.google.android.material:material:1.10.0")
 
     /*region Dagger Hilt dependencies*/
-    api("com.google.dagger:hilt-android:2.48.1")
+    implementation("com.google.dagger:hilt-android:2.48.1")
     kapt("com.google.dagger:hilt-android-compiler:2.48.1")
     /*endregion*/
 
