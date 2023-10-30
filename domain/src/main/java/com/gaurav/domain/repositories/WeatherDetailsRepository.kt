@@ -1,5 +1,8 @@
 package com.gaurav.domain.repositories
 
+import com.gaurav.domain.entities.WeatherDataEntity
+import kotlinx.coroutines.flow.Flow
+
 interface WeatherDetailsRepository {
-    fun fetchWeatherDetails()
+    suspend fun fetchWeatherDetails(): Flow<WeatherDataEntity>
 }
